@@ -6,16 +6,39 @@ Sandy beige   #bcaa96
 Dark gray     #222222
 Light gray    #d3d4d6
 Off-white     #f6f6f6
+
+SITE FONTS 
+
+Caveat
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+
+
+Open Sans
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 */
 
 /* GLOBAL STYLES
 ----------------------------*/
+
+/* IMPORT GOOGLE FONTS ---------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /*
     https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 */
 html {
     box-sizing: border-box;
+    font-size: 62.5%; /* set default to 10px*/
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -27,7 +50,28 @@ html,body {
 body {
     background: #f6f6f6;
     margin: 0;
+    font-family: 'Opens Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
+
+h1, h2, h3 {
+    font-family: "Caveat", cursive;
+    font-weight: 400;
+    margin: 0;
+}
+h1 {
+    font-size: 7rem;
+    line-height: 0.85;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+
 
 /* Links */
 a {
@@ -47,6 +91,13 @@ footer a:hover {
     background: #3c8453;
     color: #f6f6f6;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 7px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    border-radius: 4px;
 }
 
 .content-wrapper {
@@ -92,6 +143,7 @@ footer a:hover {
     position: fixed;
     top: 5px;
     left: 5px;
+    font-size: 1.5rem;
 }
 
 
@@ -102,18 +154,37 @@ footer a:hover {
 /* Projects
 ----------------------------*/
 .project-item {
-    display: flow-root;
-    margin: 30px 0;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin: 30px 0;  
 }
 .project-item img {
-    width: 300px;
-    float: left;
-    margin-right: 20px;
+    width: 280px;
+    /*float: left;
+    margin-right: 20px; */
 }
 
+.project-details p:first-child {
+    margin-top: 0;
+}
 
 /* Work Experience
 ----------------------------*/
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+}
+
+.work-details p {
+    margin: 0;
+}
+
+.work-summary p:first-child {
+    margin-top: 0;
+}
 
 
 /* Education
